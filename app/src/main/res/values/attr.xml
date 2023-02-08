@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="primaryColor" format="reference|color" />
+    <attr name="secondaryColor" format="reference|color" />
+    <attr name="cardViewColor" format="reference|color" />
+    <attr name="buttonColor" format="reference|color" />
+</resources>

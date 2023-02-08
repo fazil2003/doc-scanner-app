@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout_bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Result"
+                            android:textStyle="bold"
+                            android:textColor="?attr/primaryColor"
+                            android:textSize="18sp" />
+
+                        <Button
+                            android:id="@+id/button_to_copy"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="5dp"
+                            android:textColor="?attr/buttonColor"
+                            android:background="@drawable/button_ripple_effect"
+                            app:backgroundTint="@null"
+                            android:text="Copy"
+                            android:textAllCaps="false"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/button_to_save"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="?attr/buttonColor"
+                            android:background="@drawable/button_ripple_effect"
+                            app:backgroundTint="@null"
+                            android:text="Save"
+                            android:textAllCaps="false"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <!--The scanned text from image will display here-->
+                    <EditText
+                        android:id="@+id/resultEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autoLink="all"
+                        android:background="@null"
+                        android:textCursorDrawable="@drawable/custom_cursor"
+                        android:textSize="14sp"
+                        android:hint=""
+                        android:padding="5dp"
+                        android:textColor="#000" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <!--The image taken will be displayed here-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Image Preview"
+                        android:textStyle="bold"
+                        android:textColor="?attr/primaryColor"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/imageIv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:maxHeight="250dp"
+                        android:scaleType="fitCenter" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <!--Add insert image button in actionbar menu-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true">
+
+        <Button
+            android:id="@+id/button_open_camera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:textSize="16sp"
+            android:background="@drawable/button_ripple_effect"
+            app:backgroundTint="?attr/buttonColor"
+            android:textColor="?attr/primaryColor"
+            android:drawableLeft="@drawable/baseline_camera_24"
+            android:drawableTint="@color/dodgerblue"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:text="Camera" />
+
+        <Button
+            android:id="@+id/button_open_gallery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:textSize="16sp"
+            android:background="@drawable/button_ripple_effect"
+            app:backgroundTint="?attr/buttonColor"
+            android:textColor="?attr/primaryColor"
+            android:drawableLeft="@drawable/baseline_photo_24"
+            android:drawableTint="@color/dodgerblue"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:text="Gallery" />
+
+    </LinearLayout>
+
+</RelativeLayout>
